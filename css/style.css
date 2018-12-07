@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch');
+
+.row {
+  margin-top: 30px;
+}
+
+.cost {
+  font-size: 6rem;
+  margin: auto;
+  color: #6c757d;
+}
+
+.navbar-brand {
+  font-family: 'Chakra Petch', sans-serif;
+  color: #fff;
+}
+
+.navbar-brand:hover {
+  color: #eee;
+}
+
+h2 {
+  margin: auto;
+  color: #6c757d;
+  font-family: 'Helvetica Neue';
+}
