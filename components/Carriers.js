@@ -16,7 +16,7 @@ class Carriers extends Component {
 
   updateStateData() {
     axios
-      .get('http://insightdemo.ngrok.io/carriers')
+      .get('/carriers')
       .then(res => {
         const carriers = res.data;
         const labels = [];

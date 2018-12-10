@@ -16,7 +16,7 @@ class Countries extends Component {
 
   updateStateData() {
     axios
-      .get('http://insightdemo.ngrok.io/countries')
+      .get('/countries')
       .then(res => {
         const countries = res.data;
         const labels = [];

@@ -15,7 +15,7 @@ class Cost extends Component {
 
   updateStateData() {
     axios
-      .get('http://insightdemo.ngrok.io/cost')
+      .get('/cost')
       .then(res => {
         const cost = Math.round(res.data.totalAmount * 100) / 100;
         this.setState({ cost });

@@ -1,14 +1,15 @@
 const Koa = require('koa');
-const next = require('next');
-const router = require('koa-route');
+const Next = require('next');
+const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
+const cors = require('koa-cors');
 const axios = require('axios');
 const Pusher = require('pusher');
 const db = require('./db/mongodb');
 
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
+const app = Next({ dev });
 const handle = app.getRequestHandler();
 
 if (process.env.NODE_ENV !== 'production') {
@@ -34,7 +35,9 @@ var pusher = new Pusher({
 
 app.prepare().then(() => {
   const server = new Koa();
-  //server.use(cors());
+  const router = new Router();
+
+  server.use(cors());
   server.use(bodyParser());
 
   const getInsight = async number => {
@@ -55,7 +58,7 @@ app.prepare().then(() => {
       ctx.respond = false;
     },
     inbound: async ctx => {
-      const number = ctx.request.body.msisdn;
+      const number = await ctx.request.body.msisdn;
       const insight = await getInsight(number);
       const result = await db.storeInsight(insight);
       if (typeof result !== 'undefined') {
@@ -72,20 +75,24 @@ app.prepare().then(() => {
     },
     getCarrierAggregation: async ctx => {
       const records = await db.aggregateCarriers();
+
       ctx.body = records;
     },
     getPricingAggregation: async ctx => {
       const records = await db.aggregatePricing();
+
       ctx.body = records;
     }
   };
 
-  server.use(router.get('/', routes.index));
-  server.use(router.get('*', routes.star));
-  server.use(router.post('/inbound', routes.inbound));
-  server.use(router.get('/countries', routes.getCountryAggregation));
-  server.use(router.get('/carriers', routes.getCarrierAggregation));
-  server.use(router.get('/cost', routes.getPricingAggregation));
+  router.get('/', routes.index);
+  router.get('/_next/*', routes.star);
+  router.post('/inbound', routes.inbound);
+  router.get('/countries', routes.getCountryAggregation);
+  router.get('/carriers', routes.getCarrierAggregation);
+  router.get('/cost', routes.getPricingAggregation);
+
+  server.use(router.routes());
 
   server.use(async (ctx, next) => {
     ctx.res.statusCode = 200;

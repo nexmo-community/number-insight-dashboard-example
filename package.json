@@ -19,7 +19,7 @@
     "koa": "^2.6.2",
     "koa-bodyparser": "^4.2.1",
     "koa-cors": "0.0.16",
-    "koa-route": "^3.2.0",
+    "koa-router": "^7.4.0",
     "mongoose": "^5.3.15",
     "next": "latest",
     "pusher": "^2.2.0",
