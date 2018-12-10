@@ -2,7 +2,6 @@ const Koa = require('koa');
 const Next = require('next');
 const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
-const cors = require('koa-cors');
 const axios = require('axios');
 const Pusher = require('pusher');
 const db = require('./db/mongodb');
@@ -37,7 +36,6 @@ app.prepare().then(() => {
   const server = new Koa();
   const router = new Router();
 
-  server.use(cors());
   server.use(bodyParser());
 
   const getInsight = async number => {
