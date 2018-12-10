@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Row, Col } from 'reactstrap';
+import CountUp from 'react-countup';
 import axios from 'axios';
 import Pusher from 'pusher-js';
 
@@ -9,7 +10,7 @@ class Cost extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cost: ''
+      cost: 0.0
     };
   }
 
@@ -45,7 +46,15 @@ class Cost extends Component {
           <h2>Insight Cost To Date</h2>
         </Row>
         <Row>
-          <p className="cost">&euro;{this.state.cost}</p>
+          <CountUp
+            className="cost"
+            prefix="€"
+            start={0}
+            end={this.state.cost}
+            delay={1}
+            decimals={2}
+            decimal="."
+          />
         </Row>
       </Fragment>
     );

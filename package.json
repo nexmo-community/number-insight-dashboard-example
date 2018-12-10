@@ -26,6 +26,7 @@
     "pusher-js": "^4.3.1",
     "react": "^16.6.3",
     "react-chartjs-2": "^2.7.4",
+    "react-countup": "^4.0.0",
     "react-dom": "^16.6.3",
     "reactstrap": "^6.5.0"
   },
