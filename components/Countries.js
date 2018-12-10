@@ -8,7 +8,6 @@ const PUSHER_ID = '52f9e2610463b44f0e09';
 class Countries extends Component {
   constructor(props) {
     super(props);
-    //this.updateStateData = this.updateStateData.bind(this);
     this.state = {
       chartData: {}
     };
