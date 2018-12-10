@@ -11,7 +11,7 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = Next({ dev });
 const handle = app.getRequestHandler();
 
-if (process.env.NODE_ENV !== 'production') {
+if (dev) {
   require('dotenv').config();
 }
 
