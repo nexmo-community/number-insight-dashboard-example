@@ -16,3 +16,9 @@ There are a few dependencies on third party services (all of which have free tie
 - [Pusher](https://www.pusher.com/)
 
 All of the credentials, URIs, and other pieces of information to make this app work are located in a `.env` file. Take a look at the `.env.sample` file in this repo to see what you'll need to make a note of.
+
+## Contributing new graphs
+
+Each graph in this application is a React component. They all follow the same pattern so can be easily copied should you wish to create your own.
+
+Any new components can be submitted for inclusion in this project via pull request and would be gratefully received.
