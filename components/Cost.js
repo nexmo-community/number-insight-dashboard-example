@@ -49,11 +49,11 @@ class Cost extends Component {
           <CountUp
             className="cost"
             prefix="€"
-            start={0}
             end={this.state.cost}
             delay={1}
             decimals={2}
             decimal="."
+            redraw={true}
           />
         </Row>
       </Fragment>
