@@ -16,8 +16,8 @@ if (dev) {
 }
 
 const {
-  API_KEY,
-  API_SECRET,
+  NEXMO_API_KEY,
+  NEXMO_API_SECRET,
   PUSHER_APP_ID,
   PUSHER_APP_KEY,
   PUSHER_APP_SECRET,
@@ -40,7 +40,7 @@ app.prepare().then(() => {
 
   const getInsight = async number => {
     const insightRequest = await axios.get(
-      `https://api.nexmo.com/ni/advanced/json?api_key=${API_KEY}&api_secret=${API_SECRET}&number=${number}`
+      `https://api.nexmo.com/ni/advanced/json?api_key=${NEXMO_API_KEY}&api_secret=${NEXMO_API_SECRET}&number=${number}`
     );
 
     return insightRequest.data;
