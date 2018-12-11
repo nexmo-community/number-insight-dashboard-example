@@ -4,7 +4,7 @@ This project demonstrates how to build a real time dashboard that uses data from
 
 Check out a live version on Glitch: [https://nexmo-number-insight-dashboard.glitch.me/](https://nexmo-number-insight-dashboard.glitch.me/).
 
-To set up your own version, run the following commands after cloning the repo:
+To set up your own version, run the following commands after cloning the repo, or remix the Glitch version:
 
 ```bash
 $ npm install
