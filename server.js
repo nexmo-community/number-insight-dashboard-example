@@ -56,7 +56,11 @@ app.prepare().then(() => {
       ctx.respond = false;
     },
     inbound: async ctx => {
+      // The /inbound endpoint looks for an inbound SMS coming from a Nexmo webhook
+      // however, if you wanted to use it with something else, just pass a number
+      // in the format 4479682413121 here and everything will still work.
       const number = await ctx.request.body.msisdn;
+
       const insight = await getInsight(number);
       const result = await db.storeInsight(insight);
       if (typeof result !== 'undefined') {
