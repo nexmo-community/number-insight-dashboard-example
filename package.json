@@ -1,8 +1,8 @@
 {
   "name": "realtime-number-insight-dashboard-nextjs",
   "version": "1.0.0",
-  "description": "A realtime dashboard for the Nexmo Number Insight API",
-  "main": "index.js",
+  "description": "A real time dashboard for the Nexmo Number Insight API",
+  "main": "pages/index.js",
   "scripts": {
     "dev": "nodemon server.js",
     "build": "next build",
