@@ -3,6 +3,7 @@ import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 import Pusher from 'pusher-js';
 
+// This is your Pusher App Key. You will need to update this with your own.
 const PUSHER_ID = '52f9e2610463b44f0e09';
 
 class Countries extends Component {
