@@ -44,7 +44,7 @@ class Cost extends Component {
     return (
       <Fragment>
         <Row>
-          <h2>Insight Cost To Date</h2>
+          <h2>{this.props.title}</h2>
         </Row>
         <Row>
           <CountUp

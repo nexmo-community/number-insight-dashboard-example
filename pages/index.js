@@ -23,7 +23,7 @@ export default () => {
         </Row>
         <Row>
           <Col xs="6">
-            <Cost />
+            <Cost title="Insight Cost to Date" />
           </Col>
         </Row>
       </Container>
