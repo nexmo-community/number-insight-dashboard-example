@@ -1,6 +1,6 @@
 # Nexmo Number Insight API Dashboard
 
-[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/remix/https://glitch.com/edit/#!/nexmo-number-insight-dashboard)
+[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/remix/https://glitch.com/edit/#!/nexmo-number-insight-dashboard) [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 This project demonstrates how to build a real time dashboard that uses data from the Nexmo Number Insight API to power charts and graphs.
 

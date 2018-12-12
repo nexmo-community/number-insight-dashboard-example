@@ -1,0 +1,5 @@
+{
+  "name": "Nexmo Real Time Dashboard",
+  "description": "A real-time dashboard for the Nexmo Number Insight API",
+  "repository": "https://github.com/nexmo-community/number-insight-dashboard-example"
+}
