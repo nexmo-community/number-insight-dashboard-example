@@ -24,3 +24,7 @@ h2 {
   color: #6c757d;
   font-family: 'Helvetica Neue';
 }
+
+.loading {
+  margin-left: 30%;
+}

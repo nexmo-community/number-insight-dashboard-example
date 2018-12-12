@@ -88,11 +88,11 @@ app.prepare().then(() => {
   };
 
   router.get('/', routes.index);
-  router.get('/_next/*', routes.star);
   router.post('/inbound', routes.inbound);
   router.get('/countries', routes.getCountryAggregation);
   router.get('/carriers', routes.getCarrierAggregation);
   router.get('/cost', routes.getPricingAggregation);
+  router.get('*', routes.star);
 
   server.use(router.routes());
 

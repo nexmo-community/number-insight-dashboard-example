@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 import axios from 'axios';
 import Pusher from 'pusher-js';
+import Spinner from './Spinner';
 
 // This is your Pusher App Key. You will need to update this with your own.
 const PUSHER_ID = '52f9e2610463b44f0e09';
@@ -10,7 +11,8 @@ class Carriers extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      chartData: {}
+      chartData: {},
+      loading: true
     };
   }
 
@@ -40,7 +42,7 @@ class Carriers extends Component {
           ]
         };
 
-        this.setState({ chartData });
+        this.setState({ chartData, loading: false });
       })
       .catch(err => console.log(err));
   }
@@ -61,30 +63,34 @@ class Carriers extends Component {
   }
 
   render() {
-    return (
-      <Bar
-        data={this.state.chartData}
-        width={10}
-        height={5}
-        options={{
-          title: { display: true, text: this.props.title, fontSize: 25 },
-          animation: {
-            duration: 1000,
-            easing: 'linear'
-          },
-          scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: true
+    if (this.state.loading) {
+      return <Spinner />;
+    } else {
+      return (
+        <Bar
+          data={this.state.chartData}
+          width={10}
+          height={5}
+          options={{
+            title: { display: true, text: this.props.title, fontSize: 25 },
+            animation: {
+              duration: 1000,
+              easing: 'linear'
+            },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true
+                  }
                 }
-              }
-            ]
-          },
-          maintainAspectRatio: true
-        }}
-      />
-    );
+              ]
+            },
+            maintainAspectRatio: true
+          }}
+        />
+      );
+    }
   }
 }
 
