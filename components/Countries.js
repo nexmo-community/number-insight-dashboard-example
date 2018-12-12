@@ -10,8 +10,7 @@ class Countries extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      chartData: {},
-      loading: true
+      chartData: {}
     };
   }
 
@@ -39,7 +38,7 @@ class Countries extends Component {
           ]
         };
 
-        this.setState({ ...chartData, loading: false });
+        this.setState({ chartData });
       })
       .catch(err => console.log(err));
   }
