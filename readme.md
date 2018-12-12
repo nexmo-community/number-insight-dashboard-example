@@ -4,9 +4,9 @@
 
 This project demonstrates how to build a real time dashboard that uses data from the Nexmo Number Insight API to power charts and graphs.
 
-Check out a live version on Glitch: [https://nexmo-number-insight-dashboard.glitch.me/](https://nexmo-number-insight-dashboard.glitch.me/).
+Check out a live version [on Heroku](https://nexmo-realtime-dashboard.herokuapp.com/).
 
-To set up your own version, run the following commands after cloning the repo, or [remix the Glitch version](https://glitch.com/edit/#!/nexmo-number-insight-dashboard):
+To set up your own version, run the following commands after cloning the repo, clicking the Deploy To Heroku button, or [remix the Glitch version](https://glitch.com/edit/#!/nexmo-number-insight-dashboard):
 
 ```bash
 $ npm install
