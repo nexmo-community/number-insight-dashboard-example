@@ -21,7 +21,9 @@ const {
   PUSHER_APP_ID,
   PUSHER_APP_KEY,
   PUSHER_APP_SECRET,
-  PUSHER_APP_CLUSTER
+  PUSHER_APP_CLUSTER,
+  DEMO_MODE,
+  INBOUND_PHONE_NUMBER
 } = process.env;
 
 var pusher = new Pusher({
@@ -85,6 +87,13 @@ app.prepare().then(() => {
       const records = await db.aggregatePricing();
 
       ctx.body = records;
+    },
+    checkForDemoMode: async ctx => {
+      if (DEMO_MODE) {
+        ctx.body = { demoMode: true, number: INBOUND_PHONE_NUMBER };
+      } else {
+        ctx.body = { demoMode: false };
+      }
     }
   };
 
@@ -93,6 +102,7 @@ app.prepare().then(() => {
   router.get('/countries', routes.getCountryAggregation);
   router.get('/carriers', routes.getCarrierAggregation);
   router.get('/cost', routes.getPricingAggregation);
+  router.get('/demo', routes.checkForDemoMode);
   router.get('*', routes.star);
 
   server.use(router.routes());

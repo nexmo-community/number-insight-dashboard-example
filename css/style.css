@@ -28,3 +28,9 @@ h2 {
 .loading {
   margin-left: 30%;
 }
+
+.demoMode {
+  font-family: 'Chakra Petch', sans-serif;
+  color: #fff;
+  display: table-cell;
+}
