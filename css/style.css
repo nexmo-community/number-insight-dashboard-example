@@ -23,6 +23,8 @@ h2 {
   margin: auto;
   color: #6c757d;
   font-family: 'Helvetica Neue';
+  font-size: 1.6rem;
+  font-weight: 800;
 }
 
 .loading {
