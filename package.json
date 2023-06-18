@@ -19,7 +19,7 @@
     "chart.js": "^2.7.3",
     "koa": "^2.6.2",
     "koa-bodyparser": "^4.2.1",
-    "koa-router": "^7.4.0",
+    "koa-router": "^8.0.0",
     "mongoose": "^5.3.15",
     "next": "latest",
     "pusher": "^2.2.0",
