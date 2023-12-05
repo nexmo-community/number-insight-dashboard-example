@@ -22,7 +22,7 @@
     "koa-router": "^7.4.0",
     "mongoose": "^5.3.15",
     "next": "latest",
-    "pusher": "^2.2.0",
+    "pusher": "^4.0.0",
     "pusher-js": "^4.3.1",
     "react": "^16.6.3",
     "react-chartjs-2": "^2.7.4",
